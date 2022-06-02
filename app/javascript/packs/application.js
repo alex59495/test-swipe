@@ -10,8 +10,13 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 // require("bootstrap")
 require("@fortawesome/fontawesome-free")
-import "./includes/slides"
+
+import {runSlides} from "./plugins/slides"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener('turbolinks:load', () => {
+  runSlides()
+});
